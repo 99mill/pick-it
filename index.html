@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+<body>
+    
+    <header class="nav">
+        <div class="title-box">
+            <img src="ticket.png" alt="" class="logo">
+            <h2 class="title">Pick-ticket</h2>
+        </div>
+
+        <div class="nav-btns">
+            <button class="error-btn">Report an Error</button>
+        </div>
+
+    </header>
+            
+    <div class="pick-card">
+        <!-- form for job data -->
+        <form>
+            <label for="pickNum">Pick Number</label>
+            <input type="number" name="pickNum" placeholder="00000">
+
+            <label for="casesStaged">Cases Staged</label>
+            <input type="number" name="casesStaged" placeholder="72">
+
+            <label for="task">Task</label>
+            <select name="task" required>
+                <option value="" disabled selected hidden>Choose Job Type</option>
+                <option value="qc">QC</option>
+                <option value="staging">Staging</option>
+                <option value="loading">Loading</option>
+            </select>
+            
+            <label for="name">Name</label>
+            <select name="name" required>
+                <option value="" disabled selected hidden>Select Operator</option>
+                <option value="sergio">Sergio</option>
+                <option value="sean">Sean</option>
+                <option value="hector">Hector</option>
+                <option value="gregoria">Gregoria</option>
+                <option value="estabon">Esteban</option>
+                <option value="david">David</option>
+            </select>
+        </form>
+
+        <!-- information about current running job -->
+        <div class="job-data">
+            <h1 class="run-time">00:00</h1>
+            <p class="dt-label">Down Time: <em>0m 0s</em></p>
+            <p class="dt"></p>
+            <p class="stops-label">Stops: <em>0</em></p>
+            <p class="stops"></p>
+        </div>
+        
+        <!-- module buttons -->
+        <div class="pick-tick-btns">
+            <button class="start btn-active">Start</button>
+            <button class="stop">Stop</button>
+            <button class="submit lg-btn">Submit</button>
+            <button class="restart lg-btn">Restart</button>
+        </div>
+    </div>
+
+    <div class="background-bar"></div>
+    
+</body>
+</html>
