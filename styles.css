@@ -219,6 +219,28 @@ button:hover {
     float: right;
 }
 
+/* ========== SOCIAL LINKS ========== */
+
+.social {
+    position: fixed;
+    bottom: 30px;
+    right: 50px;
+}
+
+.social a i {
+    text-decoration: none;
+    font-size: 32px;
+    color: #37474f;
+    margin-left: 20px;
+    opacity: .5;
+    transition: ease-in-out .25s;
+}
+
+.social a i:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
 
 /* ====== BACKGROUND BAR ====== */
 
