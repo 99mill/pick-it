@@ -2,6 +2,7 @@
 /* ========== RESOURCES ========== */
 
 /* Colors
+red: #FC5D68
 blue: #6EACFF
 grey: #B4B4B4
 white: #FFF
@@ -14,6 +15,26 @@ white: #FFF
 * {
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
+}
+
+button {
+    width: 115px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    transition: ease-in-out .2s;
+    font-weight: bold;
+    color: #B4B4B4;
+}
+
+button:active, button:focus {
+    outline: none;
+}
+
+button:hover {
+    transform: translate(2px, -2px);
+    box-shadow: -1px 2px 6px 0px rgba(0,0,0,0.3);
+    cursor: pointer;
 }
 
 /* ====== NAV ====== */
@@ -70,22 +91,20 @@ header {
     width: 730px;
     height: 460px;
     background-color: #fff;
+    margin: 20vh auto;
+    padding: 80px;
     -webkit-box-shadow: 2px 3px 15px 0px rgba(0,0,0,0.39);
     -moz-box-shadow: 2px 3px 15px 0px rgba(0,0,0,0.39);
     box-shadow: 2px 3px 15px 0px rgba(0,0,0,0.39);
-    margin: 20vh auto;
-    padding: 80px;
     opacity: 0;
     animation: cardOnLoad .5s forwards 1s ease-in-out;
 }
 
 @keyframes cardOnLoad {
     0%{
-        transform: rotate(0) translateY(-30%);
         opacity: 0;
         }
     100%{
-        transform: rotate(0) translateY(0%);
         opacity: 1;
         }
 }
@@ -95,7 +114,6 @@ header {
 form {
     width: 250px;
     height: 300px;
-    /* background-color: #8ec8f0; */
     float: left;
     display: flex;
     flex-direction: column;
@@ -126,11 +144,7 @@ select {
     padding-left: 5px;
 }
 
-input::-webkit-input-placeholder {
-    color: #B4B4B4;
-}
-
-select:invalid {
+input::-webkit-input-placeholder, select:invalid {
     color: #B4B4B4;
 }
 
@@ -186,16 +200,6 @@ option {
     margin-top: 20px;
 }
 
-button {
-    width: 115px;
-    height: 40px;
-    border: none;
-    border-radius: 20px;
-    transition: ease-in-out .2s;
-    font-weight: bold;
-    color: #B4B4B4;
-}
-
 .lg-btn {
     width: 250px;
     margin-top: 20px;
@@ -206,17 +210,42 @@ button {
     color: #fff;
 }
 
-button:active, button:focus {
-    outline: none;
+.btn-active-st {
+    background-color: #FC5D68;
+    color: #fff;
 }
 
-button:hover {
-    transform: translate(2px, -2px);
-    box-shadow: -1px 2px 6px 0px rgba(0,0,0,0.3);
-}
-
-.stop {
+#stop {
     float: right;
+}
+
+/* ========== FORM WARNING ========== */
+
+p#form-warning {
+    color: #FC5D68;
+    font-weight: bolder;
+    position: fixed;
+    bottom: 20px;
+    opacity: 0;
+}
+
+.alert-ani {
+    animation: warning 5s forwards 0s linear;
+}
+
+@keyframes warning {
+    0%{
+        opacity: 0;
+        }
+    20%{
+        opacity: 1;
+        }
+    80%{
+        opacity: 1;
+        }
+    100%{
+        opacity: 0;
+        }
 }
 
 /* ========== SOCIAL LINKS ========== */

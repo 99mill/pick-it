@@ -8,29 +8,29 @@
     <link rel="shortcut icon" href="ticket.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <title>Pick-It</title>
+    <title>Pick Time</title>
 <body>
     
     <header class="nav">
         <div class="title-box">
             <img src="ticket.png" alt="" class="logo">
-            <h2 class="title">Pick-It</h2>
+            <h2 class="title">Pick Time</h2>
         </div>
 
         <div class="nav-btns">
-            <button class="error-btn">Report an Error</button>
+            <button class="error-btn" id="error">Report an Error</button>
         </div>
 
     </header>
             
     <div class="pick-card">
         <!-- form for job data -->
-        <form>
-            <label for="pickNum">Pick Number</label>
-            <input type="number" name="pickNum" placeholder="00000">
+        <form id="job-form">
+            <label for="num">Pick Number</label>
+            <input type="number" name="num" placeholder="00000">
 
-            <label for="casesStaged">Cases Staged</label>
-            <input type="number" name="casesStaged" placeholder="72">
+            <label for="cases">Cases Staged</label>
+            <input type="number" name="cases" placeholder="72">
 
             <label for="task">Task</label>
             <select name="task" required>
@@ -55,19 +55,23 @@
         <!-- information about current running job -->
         <div class="job-data">
             <h1 class="run-time">00:00</h1>
-            <p class="dt-label">Down Time: <em>0m 0s</em></p>
+            <p class="dt-label">Down Time: <em id="dt">00:00</em></p>
             <p class="dt"></p>
-            <p class="stops-label">Stops: <em>0</em></p>
+            <p class="stops-label">Stops: <em id="st">0</em></p>
             <p class="stops"></p>
         </div>
         
         <!-- module buttons -->
         <div class="pick-tick-btns">
-            <button class="start btn-active">Start</button>
-            <button class="stop">Stop</button>
-            <button class="submit lg-btn">Submit</button>
-            <button class="restart lg-btn">Restart</button>
+            <button class="btn-active" id="start">Start</button>
+            <button class="" id="stop">Stop</button>
+            <button class="lg-btn" id="submit">Submit</button>
+            <button class="lg-btn" id="clear">Clear</button>
         </div>
+
+        <!-- form fill warning -->
+        <p id="form-warning">*All fields must be filled out to begin job.</p>
+
     </div>
 
     <div class="social">
@@ -79,5 +83,7 @@
 
     <div class="background-bar"></div>
     
+    <script src="scripts.js"></script>
+
 </body>
 </html>
